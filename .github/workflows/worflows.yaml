@@ -10,23 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    # - name: Set up Python
-    #   uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
-    # - name: Install dependencies
-    #   run: pip install -r requirements.txt
+      - name: Install Python dependencies
+        run: pip install -r backend-flask/requirements.txt
 
-    # - name: Run mypy
-    #   run: mypy .
+      - name: Run Python linting
+        run: pycodestyle ./backend-flask/*.py
 
-    - name: Run pycodestyle
-      run: pycodestyle .
+      - name: Run Python type checking
+        run: mypy ./backend-flask/*.py
 
-    - name: Run unittests
-      run: python -m unittest discover
-
+      - name: Run Python unittests
+        run: python -m unittest discover backend-flask
