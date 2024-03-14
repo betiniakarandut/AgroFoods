@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - development
+  pull_request:
+    branches:
+      - development
 
 jobs:
   test:
@@ -11,21 +14,20 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Install Python
-        uses: actions/setup-python@v2
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Install Python dependencies
         run: pip install -r backend-flask/requirements.txt
 
       - name: Run Python linting
-        run: pycodestyle ./backend-flask/*.py
-
+        run: flake8 ./backend-flask/
       - name: Run Python type checking
-        run: mypy ./backend-flask/*.py
+        run: mypy ./backend-flask/
 
-      - name: Run Python unittests
+      - name: Run Python unit tests
         run: python -m unittest discover backend-flask
