@@ -1,4 +1,4 @@
-# Project Name
+# Agro Foods
 
 ## Description
 
@@ -51,7 +51,7 @@ This project utilizes GitHub workflows for automation. The following workflows a
 Linting ensures code quality and consistency. The project uses the following linting tools:
 
 - **mypy**: Static type checker for Python code.
-- **pycodestyle**: Python style guide checker.
+- **flake8**: Python style guide checker.
 - **eslint**: JavaScript linting tool.
 - **stylelint**: CSS and SCSS linting tool.
 
