@@ -25,9 +25,11 @@ jobs:
         run: pip install -r backend-flask/requirements.txt
 
       - name: Run Python linting
-        run: flake8 ./backend-flask/
+        run: |  
+          flake8 $(find ./backend-flask -name "*.py")
+
       - name: Run Python type checking
-        run: mypy ./backend-flask/
+        run: mypy $(find ./backend-flask -name "*.py")
 
       - name: Run Python unit tests
         run: python -m unittest discover backend-flask
