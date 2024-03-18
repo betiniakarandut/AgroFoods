@@ -39,7 +39,7 @@ def delete_products(cnx):
     cnx.commit()
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # cnx = connection()
     # insert_products(cnx)
     # print("All products initially: ", get_all_products(cnx))
