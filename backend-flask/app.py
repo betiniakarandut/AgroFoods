@@ -78,7 +78,7 @@ def delete_products(cnx):
 
     cursor = cnx.cursor()
 
-    query = "DELETE FROM products WHERE product_id = 24"
+    query = "DELETE FROM products WHERE product_id = 42 OR 43 OR 44 OR 45 OR 46 OR 47 OR 48 OR 49"
     cursor.execute(query)
     cnx.commit()
 
