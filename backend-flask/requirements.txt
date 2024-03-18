@@ -8,6 +8,7 @@ MarkupSafe==2.1.5
 mccabe==0.7.0
 mypy==1.9.0
 mypy-extensions==1.0.0
+mysql-connector-python==8.3.0
 pycodestyle==2.11.1
 pyflakes==3.2.0
 tomli==2.0.1
