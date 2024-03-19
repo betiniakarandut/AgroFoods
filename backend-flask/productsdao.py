@@ -1,3 +1,4 @@
+import os
 import mysql.connector
 """Module for MySQL connection"""
 
@@ -5,11 +6,13 @@ import mysql.connector
 def connection():
     """MySQL connection parameters
     """
+    password = os.getenv("password")
+    user = os.getenv("user")
 
     conn = mysql.connector.connect(
         host='localhost',
-        user='root',
-        password='@Betini2024',
+        user=user,
+        password=password,
         database='agrofoods'
     )
 
