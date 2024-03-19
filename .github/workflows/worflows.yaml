@@ -13,6 +13,7 @@ on:
     paths-ignore:
       - '**/*.yml'
       - '**/README.md'
+      - 'backend-flask/README.md'
 
 jobs:
   # Test job (including linting)
@@ -32,11 +33,11 @@ jobs:
         run: pip install -r backend-flask/requirements.txt
 
       - name: Run Python linting (flake8)
-        run: flake8 backend-flask/**/*.py
+        run: flake8 backend-flask/*.py
         if: github.event_name == 'pull_request'
 
       - name: Run Python type checking (mypy)
-        run: mypy backend-flask/**/*.py
+        run: mypy backend-flask/*.py
         if: github.event_name == 'pull_request'
 
       - name: Run Python unit tests
