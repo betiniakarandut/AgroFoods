@@ -1,15 +1,15 @@
 """Test app.py"""
 import os
 import sys
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'backend-flask/')))
-
 from productsdao import connection
 from app import (
     get_all_products,
     insert_products,
     delete_products
 )
+sys.path.append(
+    os.path.abspath(os.path.join(
+        os.path.dirname(__file__), '..', 'backend-flask/')))
 
 
 def test_get_all_products():
@@ -61,5 +61,6 @@ def test_delete_products():
 
     delete_products(cnx)
     products = get_all_products(cnx)
-    assert not any(product['product_name'] == 'Pineapple' for product in products)
-
+    assert not any(
+        product['product_name'] == 'Pineapple'
+        for product in products)
