@@ -46,6 +46,14 @@ This project utilizes GitHub workflows for automation. The following workflows a
 - **Continuous Integration (CI)**: This workflow runs on every push to the `development` branch and checks code quality, runs tests, and ensures compatibility.
 - **Deployment**: This workflow triggers on pushes to the `main` branch and handles deployment to our production environment.
 
+## DATABASE CONNECTION CREDENTIALS
+MySQL DB connection
+
+- **host='localhost',**
+- **password='@Betini2024',**
+- **user='root',**
+- **database='agrofoods'**
+
 ## Linting
 
 Linting ensures code quality and consistency. The project uses the following linting tools:
